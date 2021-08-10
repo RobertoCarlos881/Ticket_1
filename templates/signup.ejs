@@ -1,0 +1,40 @@
+<%- include('include/header') %>
+<main class="container ">
+    <div class="row mt-2">
+        <div class="col text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="3em" height="3em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M88 144v-16a8 8 0 0 1 16 0v16a8 8 0 0 1-16 0zm40 8a8 8 0 0 0 8-8v-24a8 8 0 0 0-16 0v24a8 8 0 0 0 8 8zm32 0a8 8 0 0 0 8-8v-32a8 8 0 0 0-16 0v32a8 8 0 0 0 8 8zm56-72v96h8a8 8 0 0 1 0 16h-88v17.376a24 24 0 1 1-16 0V192H32a8 8 0 0 1 0-16h8V80a16.018 16.018 0 0 1-16-16V48a16.018 16.018 0 0 1 16-16h176a16.018 16.018 0 0 1 16 16v16a16.018 16.018 0 0 1-16 16zm-80 152a8 8 0 1 0-8 8a8.01 8.01 0 0 0 8-8zM40 64h176.01L216 48H40zm160 16H56v96h144z" fill="black"/></svg>
+            <strong class="d-block mt-2 title">Login</strong>      
+        </div>    
+    </div>
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-secondary my-3">
+          <div class="card-body">
+            <h4 class="card-title text-center mb-3 form-signin">Registro</h4>                      
+            <form id="login">              
+              <div class="form-group">
+                <label for="nombres">Nombres</label>
+                <input type="text" class="form-control my-3" id="nombres" maxlength="40" required>
+              </div>
+              <div class="form-group">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" class="form-control my-3" id="apellidos" maxlength="40" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" class="form-control my-3" id="email" maxlength="100" required>              
+              </div>
+              <div class="form-group">
+                <label for="pass">Contraseña</label>
+                <input type="password" class="form-control my-3" id="pass" maxlength="20" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Enviar</button>
+              <div class="text-muted text-center mt-2">¿Ya tienes cuenta? <a href="/signup">Inicia sesión</a></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+<script src="/js/signup.js" type="module"></script>
+<%- include('include/footer') %>

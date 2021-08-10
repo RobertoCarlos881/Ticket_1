@@ -1,0 +1,43 @@
+<%- include('include/header') %>
+<%- include('include/navbar') %>
+    <main class="container table-responsive">
+        <div class="d-flex justify-content-between">
+            <h3>Presupuestos</h3>
+            <a href="create" class="btn btn-secondary">
+                <strong>+</strong>
+            </a>
+        </div>
+        <hr>   
+        <table class="table table-hover table-bordered my-3">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col">Id Presupuesto</th>
+                    <th scope="col">Fecha de Creación</th>
+                    <th scope="col">Proyecto</th>
+                    <th scope="col">Versiones</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>00/00/00</td>
+                    <td>Proyecto X</td>
+                    <td>0.0.1</td>
+                    <td class="text-center">
+                        <button class="btn btn-secondary btn-sm">
+                            <box-icon type="solid" name="edit-alt" color="black"></box-icon>
+                        </button>
+                        <button class="btn btn-secondary btn-sm">
+                            <box-icon type="solid" name="trash-alt" color="black"></box-icon>
+                        </button>
+                        <button class="btn btn-secondary btn-sm">
+                            <box-icon type="solid" name="send" color="black"></box-icon>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    
+<%- include('include/footer') %>

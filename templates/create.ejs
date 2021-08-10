@@ -1,0 +1,222 @@
+<%- include('include/header') %>
+<%- include('include/navbar') %>
+    <main class="container table-responsive">
+        <h3>Nuevo presupuesto</h3>
+        <hr/>
+        <button id="test-calculos" class="btn btn-primary btn-sm mb-4 mx-auto d-block">Calcular</button>
+        <div class="card mb-3">
+            <div class="card-header border-light">Resumen financiero</div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <div class="col-sm-6 col-lg">
+                            <label class="form-label">Ventas</label>
+                            <input type="text" class="form-control" readonly> 
+                        </div>        
+                        <div class="col-sm-6 col-lg">
+                            <label class="form-label">Costos</label>
+                            <input type="text" class="form-control" readonly> 
+                        </div>
+                        <div class="col-sm-6 col-lg">
+                            <label class="form-label">Margen</label>
+                            <input type="text" class="form-control" readonly> 
+                        </div>
+                        <div class="col-sm-6 col-lg">
+                            <label class="form-label">%</label>
+                            <input type="text" class="form-control" readonly> 
+                        </div>         
+                    </div>
+                </div>
+        </div>    
+        <div class="col my-4 table-responsive">
+            <div class="d-flex justify-content-between">
+                <h5>Flujo de efectivo</h5>
+                <div>
+                    <button class="btn btn-secondary" id="btn-agregar-titulo">
+                        <strong>+</strong>
+                    </button>
+                    <button class="btn btn-secondary btn-sm" id="btn-eliminar-titulo">
+                        <box-icon type="solid" name="trash-alt" color="grey"></box-icon>
+                    </button>
+                </div>                
+            </div>
+            <table class="table table-bordered my-3" id="flujo-efectivo">
+
+                <tr class="table-active">
+                    <th>/</th>                                         
+                    <th>Sumatoria</th>                       
+                </tr>                
+                <tr>
+                    <td>Ingresos</td> 
+
+                    <td><input type="text" id="fe-sum-ingresos" class="form-control" readonly/></td>  
+                </tr>
+                <tr>
+                    <td>Egresos</td> 
+
+                    <td><input type="text" id="fe-sum-egresos" class="form-control" readonly/></td>  
+                </tr>
+                <tr>
+                    <td>Total</td>
+
+                    <!--negativos en rojo-->
+                    <td><input type="text" id="fe-sum-total" class="form-control" readonly/></td>  
+                </tr>
+                <tr>
+                    <td>Acumulado</td>  
+
+                    <td></td>                        
+                </tr>
+            </table>
+        </div>  
+        <!------------------------------------>
+        <div class="col my-4 table-responsive">
+            <h5>Estado de resultados</h5>
+            <table class="table table-bordered my-3" id="estado-de-resultados">
+                <tr class="table-active">
+                    <th>/</th>                                         
+                    <th>Sumatoria</th>                       
+                </tr>                
+                <tr>
+                    <td>Ventas</td> 
+
+                    <td><input type="text" id="er-sum-ventas" class="form-control" readonly/></td>  
+                </tr>
+                <tr>
+                    <td>Costos</td> 
+
+                    <td><input type="text" id="er-sum-costos" class="form-control" readonly/></td>  
+                </tr>
+                <tr>
+                    <td>Margen</td>
+
+                    <!--negativos en rojo-->
+                    <td><input type="text" id="er-sum-margen" class="form-control" readonly/></td>  
+                </tr>
+                <tr>
+                    <td>Saldo final</td>  
+
+                    <td></td>                        
+                </tr>
+            </table>
+        </div>  
+        <!------------------------------------>
+        <div class="col my-4 table-responsive">
+            <div class="d-flex justify-content-between">
+                <h5>Ingresos</h5>
+                <div>
+                    <button class="btn btn-secondary" id="btn-agregar-fila-ingresos">
+                        <strong>+</strong>
+                    </button>
+                </div>                
+            </div>
+            <table class="table table-bordered my-3" id="ingresos">
+                <tr class="table-active">
+                    <th>Concepto</th>                                         
+                    <th>Sumatoria</th>                       
+                </tr>             
+                <tr>
+                    <td>Total</td>
+                    <td><input type="text" id="ingresos-sum-total" class="form-control" readonly/></td>
+                </tr>
+
+            </table>
+        </div>        
+        <!------------------------------------>
+        <div class="col my-4 table-responsive">
+            <div class="d-flex justify-content-between">
+                <h5>Costos directos</h5>
+                <div>
+                    <button class="btn btn-secondary" id="btn-agregar-fila-cd">
+                        <strong>+</strong>
+                    </button>
+                </div>                
+            </div>
+            <table class="table table-bordered my-3" id="costos-directos">
+                <tr class="table-active">
+                    <th>Concepto</th>                                         
+                    <th>Sumatoria</th>                       
+                </tr>                
+                <tr>
+                    <td>Total</td>
+                    <td><input type="text" id="cd-sum-total" class="form-control" readonly/></td>
+                </tr>
+
+            </table>
+        </div>
+        <!------------------------------------>
+        <div class="col my-4 table-responsive">
+            <div class="d-flex justify-content-between">
+                <h5>Gastos administrativos</h5>
+                <div>
+                    <button class="btn btn-secondary" id="btn-agregar-fila-ca">
+                        <strong>+</strong>
+                    </button>
+                </div>                
+            </div>
+            <table class="table table-bordered my-3" id="costos-administrativos">
+                <tr class="table-active">
+                    <th>Concepto</th>                                         
+                    <th>Sumatoria</th>                       
+                </tr>                
+                <tr>
+                    <td>Total</td>
+                    <td><input type="text" id="ca-sum-total" class="form-control" readonly/></td>
+                </tr>
+
+            </table>
+        </div>  
+        <!------------------------------------>
+        <div class="col my-4 table-responsive">
+            <div class="d-flex justify-content-between">
+                <h5>Recursos (% de asignación)</h5>
+                <div>
+                    <button class="btn btn-secondary" id="btn-agregar-fila-recursos">
+                        <strong>+</strong>
+                    </button>
+                </div>                
+            </div>
+            <table class="table table-bordered my-3" id="recursos">
+                <tr class="table-active">
+                    <th>Recursos</th>    
+                    <th>Costo mensual</th>                                   
+                    <th>Sumatoria</th>                       
+                </tr>                
+                <tr>
+                    <td>Total</td>
+                    <td><input type="text" id="recursos-sum-costo-mensual" class="form-control dinero" readonly/></td>
+                    <td><input type="text" id="recursos-sum-total" class="form-control" readonly/></td>
+                </tr>
+            </table>
+        </div>  
+        <!------------------------------------>
+        <div class="col my-4 table-responsive">
+            <h5>Costos</h5>             
+            <table class="table table-bordered my-3" id="costos">
+                <tr class="table-active">
+                    <th>Recursos</th>                                         
+                    <th>Sumatoria</th>                       
+                </tr>                
+                <tr>
+                    <td>Total</td>
+                    <td><input type="text" id="costos-sum-total" class="form-control" readonly/></td>
+                </tr>
+            </table>
+        </div>  
+        <!------------------------------------>
+        <div class="col my-4 table-responsive">
+            <h5>Resumen Costos Recursos</h5>
+            <table class="table table-bordered my-3" id="resumen-costos-recursos">
+                <tr class="table-active">
+                    <th>Recursos</th>                                         
+                    <th>Sumatoria</th>                       
+                </tr>                
+                <tr>
+                    <td>Total</td>
+                    <td><input type="text" id="rcr-sum-total" class="form-control" readonly/></td>
+                </tr>
+            </table>
+        </div>  
+        <!------------------------------------>
+</main>
+<script src="/js/create.js" type="module"></script>
+<%- include('include/footer') %>
