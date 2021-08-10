@@ -75,15 +75,15 @@ Es muy facil montar este proyecto localmente, solo hay que seguir unos pequeños
    ```
 3. Crea tu archivo de variables de entorno `.env`
    ```JS
-HOST='localhost'
-PORT= 3000
-WHITELIST=[]
-DB_HOST= 'localhost'
-DB_PORT= 
-DB_USER= ''
-DB_PASS= ''
-DB_NAME= 'ticket_1'
-SECRET_KEY= <Secretkey> poner aqui algo con lo que se cifre tu key
+    HOST='localhost'
+    PORT= 3000
+    WHITELIST=[]
+    DB_HOST= 'localhost'
+    DB_PORT= 
+    DB_USER= ''
+    DB_PASS= ''
+    DB_NAME= 'ticket_1'
+    SECRET_KEY= <Secretkey> poner aqui algo con lo que se cifre tu key
    ```
 
 ## Uso
