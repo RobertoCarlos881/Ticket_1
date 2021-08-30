@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const sequelize = require('./conn');
+const sequelize = require('./connexiondb');
 const Presupuesto = require('./presupuesto');
 
 const FlujoDeEfectivo = sequelize.define('flujos_de_efectivo', {

@@ -1,5 +1,5 @@
 const express = require('express');
-const middjwt = require('../midd/midd.jwt');
+const middjwt = require('../app/middleware/midd.jwt');
 const router = express.Router();
 
 router.get('/', middjwt.headerUsuario, middjwt.loggeado, (req, res) => {    

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const middjwt = require('../midd/midd.jwt');
-const middValidation = require('../midd/midd.validation');
-const usuarioController = require('../controllers/usuario.controller');
+const middjwt = require('../app/middleware/midd.jwt');
+const middValidation = require('../app/dto/midd.dto');
+const usuarioController = require('../app/controllers/usuario.controller');
 
 router.post('/usuario/signup', middValidation.validarSignUp, async (req, res) => {
     let body = req.body;    

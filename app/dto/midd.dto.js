@@ -1,6 +1,6 @@
 const Joi = require('joi');
-const UsuarioValidation = require('./usuario.validation');
-const PresupuestoValidation = require('./presupuesto.validation');
+const UsuarioValidation = require('./usuario.dto');
+const PresupuestoValidation = require('./presupuesto.dto');
 
 const validarLogin = async (req, res, next) => {
     try{

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const middjwt = require('../midd/midd.jwt');
-const middValidation = require('../midd/midd.validation');
-const presupuestoController = require('../controllers/presupuesto.controller');
+const middjwt = require('../app/middleware/midd.jwt');
+const middValidation = require('../app/dto/midd.dto');
+const presupuestoController = require('../app/controllers/presupuesto.controller');
 
 router.post('/presupuesto/registrar', middjwt.checarToken, middValidation.validarPresupuesto, async (req, res) => {
     let body = req.body;    

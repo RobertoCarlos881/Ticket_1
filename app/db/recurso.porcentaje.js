@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const sequelize = require('./conn');
+const sequelize = require('./connexiondb');
 const Recurso = require("./recurso");
 
 const RecursoPorcentaje = sequelize.define('recursos_porcentajes', {

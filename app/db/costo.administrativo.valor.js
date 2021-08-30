@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const sequelize = require('./conn');
+const sequelize = require('./connexiondb');
 const CostoAdministrativo = require('./costo.administrativo');
 
 const CostoAdministrativoValor = sequelize.define('costos_administrativos_valores', {

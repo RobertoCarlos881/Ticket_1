@@ -3,24 +3,24 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const midd = require('./midd/midd.general');
+const midd = require('./app/middleware/midd.general');
 //Views
 const templates = require('./views/general.view');
 const usuarioView = require('./views/usuario.view');
 const presupuestoView = require('./views/presupuesto.view');
 //Sequelize
-const sequelize = require('./db/conn');
-const Usuario = require('./db/usuario');
-const Presupuesto = require('./db/presupuesto');
-const FlujoDeEfectivo = require('./db/flujo.de.efectivo');
-const Ingreso = require('./db/ingreso');
-const IngresoValor = require('./db/ingreso.valor');
-const CostoDirecto = require('./db/costo.directo');
-const CostoDirectoValor = require('./db/costo.directo.valor');
-const CostoAdministrativo = require('./db/costo.administrativo');
-const CostoAdministrativoValor = require('./db/costo.administrativo.valor');
-const Recurso = require('./db/recurso');
-const RecursoPorcentaje = require('./db/recurso.porcentaje');
+const sequelize = require('./app/db/connexiondb');
+const Usuario = require('./app/db/usuario');
+const Presupuesto = require('./app/db/presupuesto');
+const FlujoDeEfectivo = require('./app/db/flujo.de.efectivo');
+const Ingreso = require('./app/db/ingreso');
+const IngresoValor = require('./app/db/ingreso.valor');
+const CostoDirecto = require('./app/db/costo.directo');
+const CostoDirectoValor = require('./app/db/costo.directo.valor');
+const CostoAdministrativo = require('./app/db/costo.administrativo');
+const CostoAdministrativoValor = require('./app/db/costo.administrativo.valor');
+const Recurso = require('./app/db/recurso');
+const RecursoPorcentaje = require('./app/db/recurso.porcentaje');
 //Middlewares generales
 app.use(express.json());
 app.use(cors(midd.corsOptions));
@@ -57,7 +57,6 @@ const sincronizarTablas = async () => {
 const iniciarServidor = async () => {   
     try {           
         await sequelize.authenticate();
-        //await sequelize.sync();
         //await sincronizarTablas();
         app.listen(process.env.PORT, () => {
             console.log(`Server on: http://${process.env.HOST}:${process.env.PORT}`);

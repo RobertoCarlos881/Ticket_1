@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const sequelize = require('./conn');
+const sequelize = require('./connexiondb');
 const CostoDirecto = require("./costo.directo");
 
 const CostoDirectoValor = sequelize.define('costos_directos_valores', {
